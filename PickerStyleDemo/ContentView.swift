@@ -21,6 +21,8 @@ struct ContentView: View {
         VStack {
             Picker("Status", selection: $selectedStatus) {
                 ForEach(statuses) { status in
+                    // This is not rendering as expected! See
+                    // https://developer.apple.com/forums/thread/732208.
                     Label(status.title, systemImage: "tag")
                         .tint(status.color)
                         .tag(status)
